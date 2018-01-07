@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.InfoMapper" >
+  <resultMap id="infoResultMap" type="Info" >
+    <id column="stuid" property="stuid" jdbcType="VARCHAR" />
+    <result column="stuname" property="stuname" jdbcType="VARCHAR" />
+    <result column="stusex" property="stusex" jdbcType="VARCHAR" />
+    <result column="speciality" property="speciality" jdbcType="VARCHAR" />
+    <result column="academe" property="academe" jdbcType="VARCHAR" />
+    <result column="grade" property="grade" jdbcType="VARCHAR" />
+  </resultMap>
+  <!-- 用户列表 -->
+  <select id="getAll" parameterType="Info" resultMap="infoResultMap">
+  	select * from info  
+  </select>
+ <insert id="add" parameterType="Info">  
+        insert into info(stuid,stuname,stusex,speciality,academe,grade) values(#{stuid},#{stuname},#{stusex},#{speciality},#{academe},#{grade})  
+    </insert>  
+  <select id="getOne" parameterType="String" resultMap="infoResultMap">
+  	select * from info where stuid=#{stuid} 
+  </select>
+  <update id="edit" parameterType="Info">  
+        update info set stuid=#{stuid},stuname=#{stuname},stusex=#{stusex},speciality=#{speciality},academe=#{academe},grade=#{grade} where stuid=#{stuid}
+    </update>
+    <delete id="deleteInfo" parameterType="Info">  
+        delete from info where stuid=#{stuid}
+    </delete>
+</mapper>

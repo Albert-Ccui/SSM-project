@@ -1,0 +1,4 @@
+com\ssm\controller\TecherAction.class
+com\ssm\controller\UserAction.class
+com\ssm\controller\BaseAction.class
+com\ssm\controller\CourseAction.class

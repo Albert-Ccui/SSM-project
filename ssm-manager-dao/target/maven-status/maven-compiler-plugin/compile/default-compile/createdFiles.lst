@@ -1,0 +1,5 @@
+com\ssm\dao\UserMapper.class
+com\ssm\dao\InfoMapper.class
+com\ssm\dao\BaseMapper.class
+com\ssm\dao\TecherMapper.class
+com\ssm\dao\CourseMapper.class
